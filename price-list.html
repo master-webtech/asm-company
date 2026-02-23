@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price List - ASM Food Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header"><h2>☰ Menu</h2></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Mfg Dashboard</a></li>
+            <li><a href="raw-dashboard.html">Raw Dashboard</a></li>
+            <li><a href="purchase.html">Purchase Entry</a></li>
+            <li><a href="price-list.html" style="background-color: var(--secondary-color);">Price List</a></li>
+            <li><a href="mfg-details.html">Mfg Details</a></li>
+            <li><a href="production.html">Production Entry</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="logo-area"><span class="logo-placeholder">🌾</span><h1>ASM Food Products</h1></div>
+            <h2>Raw Material Price List</h2>
+        </header>
+
+        <div class="page-container">
+            <table id="price-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Last Purchase Price (per kg)</th>
+                        <th>Last Purchase Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="core.js"></script>
+    <script src="price-list.js"></script>
+</body>
+</html>

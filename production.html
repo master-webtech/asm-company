@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production Entry - ASM Food Products</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-header"><h2>☰ Menu</h2></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Mfg Dashboard</a></li>
+        <li><a href="raw-dashboard.html">Raw Dashboard</a></li>
+        <li><a href="purchase.html">Purchase Entry</a></li>
+        <li><a href="price-list.html">Price List</a></li>
+        <li><a href="mfg-details.html">Mfg Details</a></li>
+        <li>
+          <a
+            href="production.html"
+            style="background-color: var(--secondary-color)"
+            >Production Entry</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header class="top-header">
+        <div class="logo-area">
+          <span class="logo-placeholder">🌾</span>
+          <h1>ASM Food Products</h1>
+        </div>
+        <h2>Production Entry</h2>
+      </header>
+
+      <div class="page-container">
+        <form id="production-form">
+          <label>Manufactured Date:</label>
+          <input type="date" id="prod-date" required />
+
+          <label>Manufacture Product Name:</label>
+          <select id="prod-product"></select>
+
+          <label>Overall Quantity Used (Raw in KG):</label>
+          <input type="number" id="prod-qty-used" step="0.01" required />
+
+          <label>Quantity Manufactured (Final in KG):</label>
+          <input type="number" id="prod-qty-final" step="0.01" required />
+
+          <div
+            style="
+              margin-top: 15px;
+              padding: 15px;
+              background: #e9ecef;
+              border-radius: 5px;
+            "
+          >
+            <p>
+              <strong>Wastage:</strong>
+              <span id="prod-waste" style="color: #e74c3c">0%</span>
+            </p>
+            <p>
+              <strong>Estimated Cost Price per KG:</strong> ₹<span
+                id="prod-cost"
+                >0.00</span
+              >
+            </p>
+          </div>
+
+          <button type="submit">Save Production Log</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="core.js"></script>
+    <script src="production.js"></script>
+  </body>
+</html>

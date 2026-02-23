@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mfg Dashboard - ASM Food Products</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-header"><h2>☰ Menu</h2></div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" style="background-color: var(--secondary-color)"
+            >Mfg Dashboard</a
+          >
+        </li>
+        <li><a href="raw-dashboard.html">Raw Dashboard</a></li>
+        <li><a href="purchase.html">Purchase Entry</a></li>
+        <li><a href="price-list.html">Price List</a></li>
+        <li><a href="mfg-details.html">Mfg Details</a></li>
+        <li><a href="production.html">Production Entry</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header class="top-header">
+        <div class="logo-area">
+          <span class="logo-placeholder">🌾</span>
+          <h1>ASM Food Products</h1>
+        </div>
+        <h2>Manufacture Product Dashboard</h2>
+      </header>
+
+      <div class="page-container">
+        <details open>
+          <summary>Section 1: Top 3 & Bottom 3 Manufactured Products</summary>
+          <div
+            id="mfg-top-bottom"
+            style="display: flex; gap: 20px; margin-top: 15px"
+          >
+            <div
+              style="
+                flex: 1;
+                background: #e8f8f5;
+                padding: 15px;
+                border-radius: 8px;
+              "
+            >
+              <h4 style="color: #27ae60">Highest Performing (By Qty)</h4>
+              <ol id="mfg-top-list"></ol>
+            </div>
+            <div
+              style="
+                flex: 1;
+                background: #fdedec;
+                padding: 15px;
+                border-radius: 8px;
+              "
+            >
+              <h4 style="color: #c0392b">Lowest Performing (By Qty)</h4>
+              <ol id="mfg-bottom-list"></ol>
+            </div>
+          </div>
+        </details>
+
+        <details open>
+          <summary>Section 2: Production Trend Analysis</summary>
+          <div style="display: flex; gap: 10px; margin-bottom: 15px">
+            <select id="mfg-chart-product" onchange="renderMfgChart()"></select>
+            <select id="mfg-chart-time" onchange="renderMfgChart()">
+              <option value="30">Last 30 Days</option>
+              <option value="60">Last 60 Days</option>
+              <option value="180">Last 6 Months</option>
+            </select>
+          </div>
+          <div
+            id="mfg-chart-stats"
+            style="margin-bottom: 15px; font-weight: bold; color: #34495e"
+          ></div>
+          <canvas id="mfg-chart"></canvas>
+        </details>
+
+        <details open>
+          <summary>Section 3: Quantity Produced</summary>
+          <div style="display: flex; gap: 10px; margin-bottom: 15px">
+            <select id="mfg-overall-product" onchange="calcMfgOverallQty()">
+              <option value="Overall">Overall (All Products)</option>
+            </select>
+            <select id="mfg-overall-time" onchange="calcMfgOverallQty()">
+              <option value="30">Last 30 Days</option>
+              <option value="60">Last 60 Days</option>
+              <option value="180">Last 6 Months</option>
+            </select>
+          </div>
+          <div style="padding: 15px; background: #ecf0f1; border-radius: 8px">
+            <h3 style="margin-bottom: 0">
+              Total Produced:
+              <span
+                id="mfg-total-qty-display"
+                style="color: var(--secondary-color)"
+                >0</span
+              >
+              KG
+            </h3>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <script src="core.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

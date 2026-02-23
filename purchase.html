@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Entry - ASM Food Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header"><h2>☰ Menu</h2></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Mfg Dashboard</a></li>
+            <li><a href="raw-dashboard.html">Raw Dashboard</a></li>
+            <li><a href="purchase.html">Purchase Entry</a></li>
+            <li><a href="price-list.html">Price List</a></li>
+            <li><a href="mfg-details.html">Mfg Details</a></li>
+            <li><a href="production.html">Production Entry</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="logo-area"><span class="logo-placeholder">🌾</span><h1>ASM Food Products</h1></div>
+            <h2>Purchase Entry</h2>
+        </header>
+
+        <div class="page-container">
+            <form id="purchase-form">
+                <label>Purchase Date:</label>
+                <input type="date" id="pur-date" required>
+                
+                <label>Product Name:</label>
+                <select id="pur-product"></select>
+                <button type="button" onclick="editRawProducts()">Edit Products List</button>
+
+                <label>Quantity:</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" id="pur-qty" step="0.01" required>
+                    <select id="pur-unit"><option value="kg">KG</option><option value="g">Gram</option></select>
+                </div>
+
+                <label>Overall Price (₹):</label>
+                <input type="number" id="pur-price" step="0.01" required>
+
+                <p>Price per KG: ₹<span id="pur-price-kg">0.00</span></p>
+                <p>Rate Hike from last purchase: <span id="pur-hike">0%</span></p>
+
+                <button type="submit">Save Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="core.js"></script>
+    <script src="purchase.js"></script>
+</body>
+</html>
